@@ -1,9 +1,5 @@
 <html lang="en">
   <head>
-<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
-<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
-<!-- End Wayback Rewrite JS Include -->
-
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Moja prosta strona IT</title>
@@ -28,17 +24,16 @@
         margin: 0;
         padding: 0;
         width: 100%;
-        min-height: 100dvh;
+        min-height: 100%;
         font-family: var(--font-family);
         background-color: var(--color-bg);
         color: var(--color-text);
-        overflow: hidden;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        /* POPRAWKA: Usunięto overflow: hidden i zmieniono display */
+        overflow-x: hidden;
+        overflow-y: auto;
+        display: block;
         text-align: center;
-        overflow-y: visible;
+        position: relative;
       }
       /* Radial background circles */
       .circle {
@@ -70,11 +65,14 @@
           transform: scale(1.05);
         }
       }
+
+      /* POPRAWKA: Uproszczony content bez transform, który psuł scroll */
       .content {
         position: relative;
         z-index: 10;
         max-width: 600px;
-        padding: 2rem;
+        padding: 12rem 2rem 5rem;
+        margin: 0 auto;
       }
       .logo {
         width: 60px;
@@ -92,23 +90,16 @@
         color: var(--color-muted);
         margin: 0;
       }
-      /* footer {
-      position: absolute;
-      bottom: 1rem;
-      width: 100%;
-      font-size: 0.875rem;
-      color: var(--color-muted);
-    } */
+
+      /* POPRAWKA: Usunięto margines 355px na rzecz naturalnego układu */
       .features {
-        background: var(--color-section-bg);
         padding: 4rem 1rem;
         text-align: center;
-        margin-top: 355px;
+        margin-top: 0;
       }
       .features h2 {
         font-size: 2rem;
         margin-bottom: 2rem;
-
         position: relative;
       }
       .feature-list {
@@ -135,18 +126,13 @@
         margin: 0;
         color: var(--color-muted);
       }
-      .wrapper-section {
-        height: 100vh;
-      }
 
-      .content {
-        position: relative;
-        z-index: 10;
-        max-width: 600px;
-        padding: 2rem;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+      /* POPRAWKA: Zmiana height na min-height i jednostkę dvh */
+      .wrapper-section {
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
       }
 
       .logo-slogan {
@@ -154,7 +140,7 @@
         position: absolute;
         left: 3rem;
         top: 3rem;
-        transform: translate(0, 0);
+        z-index: 20;
         font-size: 24px;
       }
 
@@ -171,8 +157,8 @@
       }
     </style>
   </head>
-  <body><!-- BEGIN WAYBACK TOOLBAR INSERT -->
-<div class="circle"></div>
+  <body>
+    <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="logo-slogan">
@@ -194,7 +180,7 @@
         <div class="feature-list">
           <div class="feature-item">
             <svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
-            <h3>Inegracja E-commerce</h3>
+            <h3>Integracja E-commerce</h3>
             <h3>Sklepy internetowe</h3>
             <h3>Płatności online</h3>
             <p>
